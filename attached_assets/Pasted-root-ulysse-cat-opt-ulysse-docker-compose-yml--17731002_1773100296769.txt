@@ -1,0 +1,144 @@
+root@ulysse ~ # cat /opt/ulysse/docker-compose.yml
+# =============================================================================
+# ULYSSE AI — Full Stack Docker Compose (V2 Production)
+# Run: docker compose up -d
+# =============================================================================
+
+services:
+  # ─── Ulysse Application Server ─────────────────────────────────────────────
+  ulysse:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ulysse-server
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${PORT:-5000}:5000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - DATABASE_URL=${DATABASE_URL:-postgresql://ulysse:ulysse_secure_password@postgres:5432/ulysse}
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - ulysse_uploads:/app/uploads
+      - ulysse_storage:/app/storage
+      - ulysse_media:/app/media_library
+      - ulysse_logs:/app/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:5000/api/health" ]
+      interval: 30s
+      timeout: 10s
+      start_period: 40s
+      retries: 3
+    networks:
+      - ulysse-net
+
+  # ─── PostgreSQL Database (tuned for 64GB RAM) ─────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: ulysse-postgres
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${DB_PORT:-5432}:5432"
+    environment:
+      POSTGRES_DB: ulysse
+      POSTGRES_USER: ${DB_USER:-ulysse}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-ulysse_secure_password}
+    command:
+      - "postgres"
+      - "-c"
+      - "shared_buffers=4GB"
+      - "-c"
+      - "effective_cache_size=48GB"
+      - "-c"
+      - "maintenance_work_mem=1GB"
+      - "-c"
+      - "work_mem=64MB"
+      - "-c"
+      - "max_connections=200"
+      - "-c"
+      - "wal_buffers=64MB"
+      - "-c"
+      - "max_wal_size=4GB"
+      - "-c"
+      - "random_page_cost=1.1"
+      - "-c"
+      - "effective_io_concurrency=200"
+      - "-c"
+      - "checkpoint_completion_target=0.9"
+    volumes:
+      - ulysse_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${DB_USER:-ulysse}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ulysse-net
+
+  # ─── Redis Cache (2GB LRU) ────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: ulysse-redis
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:6379:6379"
+    command: redis-server --maxmemory 2gb --maxmemory-policy allkeys-lru --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ulysse-net
+
+  # ─── Caddy Reverse Proxy (HTTPS automatic) ────────────────────────────────
+  caddy:
+    image: caddy:2-alpine
+    container_name: ulysse-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      - DOMAIN=${DOMAIN:-localhost}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - ulysse
+    networks:
+      - ulysse-net
+
+volumes:
+  ulysse_pgdata:
+    driver: local
+  ulysse_uploads:
+    driver: local
+  ulysse_storage:
+    driver: local
+  ulysse_media:
+    driver: local
+  ulysse_logs:
+    driver: local
+  redis_data:
+    driver: local
+  caddy_data:
+    driver: local
+  caddy_config:
+    driver: local
+
+networks:
+  ulysse-net:
+    driver: bridge

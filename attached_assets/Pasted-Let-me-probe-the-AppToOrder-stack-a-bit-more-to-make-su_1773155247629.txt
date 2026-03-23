@@ -1,0 +1,140 @@
+Let me probe the AppToOrder stack a bit more to make sure the code I provide fits its architecture:
+
+Good — it's Express with Drizzle/PostgreSQL (same stack as this project). Here's the complete code for the AppToOrder project. I'll provide it clearly:
+
+Here's the code to add to your AppToOrder project. It creates 3 API endpoints protected by your API key:
+
+Step 1: Create the file server/routes/healthApi.ts
+
+import type { Express, Request, Response, NextFunction } from "express";
+import { Pool } from "@neondatabase/serverless";
+function apiKeyAuth(req: Request, res: Response, next: NextFunction) {
+  const apiKey = req.headers["x-api-key"] as string;
+  const validKey = process.env.APPTOORDER_API_KEY;
+  if (!validKey) {
+    return res.status(500).json({ error: "API key not configured on server" });
+  }
+  if (!apiKey || apiKey !== validKey) {
+    return res.status(401).json({ error: "Invalid or missing API key" });
+  }
+  next();
+}
+export function registerHealthApiRoutes(app: Express) {
+  app.get("/api/health", apiKeyAuth, async (_req: Request, res: Response) => {
+    try {
+      const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+      const start = Date.now();
+      await pool.query("SELECT 1");
+      const dbLatency = Date.now() - start;
+      await pool.end();
+      res.json({
+        status: "ok",
+        app: "AppToOrder",
+        version: "1.0.0",
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime(),
+        database: { connected: true, latencyMs: dbLatency },
+        memory: {
+          rss: Math.round(process.memoryUsage().rss / 1024 / 1024),
+          heap: Math.round(process.memoryUsage().heapUsed / 1024 / 1024),
+        },
+      });
+    } catch (error: any) {
+      res.status(500).json({
+        status: "error",
+        database: { connected: false, error: error.message },
+      });
+    }
+  });
+  app.get("/api/health/schema", apiKeyAuth, async (_req: Request, res: Response) => {
+    try {
+      const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+      const tablesResult = await pool.query(`
+        SELECT 
+          t.table_name,
+          (SELECT count(*)::int FROM information_schema.columns c WHERE c.table_name = t.table_name AND c.table_schema = 'public') AS column_count,
+          (SELECT reltuples::bigint FROM pg_class WHERE relname = t.table_name) AS estimated_rows
+        FROM information_schema.tables t
+        WHERE t.table_schema = 'public' AND t.table_type = 'BASE TABLE'
+        ORDER BY t.table_name
+      `);
+      const columnsResult = await pool.query(`
+        SELECT table_name, column_name, data_type, is_nullable, column_default
+        FROM information_schema.columns
+        WHERE table_schema = 'public'
+        ORDER BY table_name, ordinal_position
+      `);
+      await pool.end();
+      const schema: Record<string, any> = {};
+      for (const table of tablesResult.rows) {
+        schema[table.table_name] = {
+          columns: columnsResult.rows
+            .filter((c: any) => c.table_name === table.table_name)
+            .map((c: any) => ({
+              name: c.column_name,
+              type: c.data_type,
+              nullable: c.is_nullable === "YES",
+              default: c.column_default,
+            })),
+          estimatedRows: Number(table.estimated_rows) || 0,
+        };
+      }
+      res.json({
+        tableCount: tablesResult.rows.length,
+        tables: schema,
+      });
+    } catch (error: any) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+  app.post("/api/health/query", apiKeyAuth, async (req: Request, res: Response) => {
+    try {
+      const { sql } = req.body;
+      if (!sql || typeof sql !== "string") {
+        return res.status(400).json({ error: "Missing 'sql' in request body" });
+      }
+      const trimmed = sql.trim().toLowerCase();
+      if (!trimmed.startsWith("select") && !trimmed.startsWith("with")) {
+        return res.status(403).json({ error: "Only SELECT queries are allowed (read-only)" });
+      }
+      const forbidden = ["insert ", "update ", "delete ", "drop ", "alter ", "truncate ", "create ", "grant ", "revoke "];
+      if (forbidden.some((kw) => trimmed.includes(kw))) {
+        return res.status(403).json({ error: "Query contains forbidden keywords (write operations not allowed)" });
+      }
+      const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+      const start = Date.now();
+      const result = await pool.query(sql);
+      const durationMs = Date.now() - start;
+      await pool.end();
+      res.json({
+        rowCount: result.rowCount,
+        durationMs,
+        rows: result.rows.slice(0, 500),
+        truncated: (result.rowCount || 0) > 500,
+      });
+    } catch (error: any) {
+      res.status(400).json({ error: error.message });
+    }
+  });
+  console.log("[HealthAPI] 3 endpoints registered: /api/health, /api/health/schema, /api/health/query");
+}
+Step 2: Register the routes in your main server file
+
+Find where your Express routes are registered (likely server/routes.ts or server/index.ts) and add:
+
+import { registerHealthApiRoutes } from "./routes/healthApi";
+// Add this line near your other route registrations:
+registerHealthApiRoutes(app);
+Step 3: Set the environment variable
+
+In the AppToOrder project's Secrets/Environment Variables, add:
+
+Key: APPTOORDER_API_KEY
+Value: (the same API key value you already set in the Ulysse project)
+That's it — 3 files touched, 3 endpoints created:
+
+Endpoint	Method	What it does
+/api/health	GET	System status, DB connectivity, memory usage
+/api/health/schema	GET	All tables with columns and row counts
+/api/health/query	POST	Execute read-only SQL (SELECT only, max 500 rows)
+All endpoints require the x-api-key header for authentication. Once deployed, Ulysse will be able to query AppToOrder data directly through conversation (orders, menus, restaurants, customers, etc.).

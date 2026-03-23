@@ -1,0 +1,45 @@
+you remember mcommande.shop?
+
+Oui, je me souviens de mcommande.shop — c'est lié à AppToOrder, la plateforme de commande en ligne pour les restaurants. Le monitoring AppToOrder tourne toutes les 5 minutes dans les jobs planifiés, et il y a des routes dédiées dans le système.
+
+Tu veux faire quelque chose avec mcommande.shop ? Un check, une modification, un diagnostic ?
+
+test
+
+Tu veux que je teste quelque chose en particulier ? Le site mcommande.shop, l'app en général, ou autre chose ?
+
+ce que MaxAI peut faire la bas
+
+Bonne question. Laisse-moi regarder ce que MaxAI a comme outils et accès pour mcommande.shop :
+
+Voilà ce que MaxAI peut faire sur macommande.shop — c'est assez complet :
+
+3 outils dédiés :
+
+query_apptoorder — Monitoring complet de macommande.shop :
+
+Health check avec 19 points de contrôle (DB, SSL, DNS, mémoire, WebSocket, Stripe, SMTP, commandes)
+Schéma DB — snapshot de la structure de la base
+Requêtes SQL directes sur la DB de macommande.shop
+Historique de monitoring — tendances de santé sur X heures
+État des URLs publiques — vérifie les 7 pages clés (accueil, SUGU, La Gaudina, portails clients, login pro, login général)
+coba_manage — Supervision IA de l'app :
+
+Stats rapides (erreurs, users, sessions)
+Analyse IA complète avec insights
+Génération de rapports PDF
+Événements récents
+coba_business — Gestion comptable et RH multi-tenant (38 actions) :
+
+Synthèse financière (CA, charges, marge, health score)
+Achats fournisseurs, dépenses, écritures bancaires
+Employés, fiches de paie, absences
+Emprunts, caisse
+Audit annuel complet
+Vue multi-tenant
++ Monitoring automatique :
+
+Job toutes les 5 minutes qui check la santé de macommande.shop
+Historique stocké en DB (health checks + URL checks + schema snapshots)
+Alertes si problèmes détectés
+En gros, MaxAI peut surveiller, diagnostiquer, et gérer toute la compta/RH des restaurants sur macommande.shop directement depuis le chat. Tu veux que je lance un test de health check ?

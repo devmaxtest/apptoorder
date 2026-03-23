@@ -1,0 +1,50 @@
+Tout est en place. Voici le récapitulatif de ce qui a été construit :
+
+L'API COBA Business Management est opérationnelle. C'est la version multi-tenant de Suguval, prête à être consommée par AppToOrder.
+
+Endpoints disponibles (tous sous /api/coba/business/, auth par x-coba-key) :
+
+Endpoint	Fonctionnalité
+GET /synthesis/:tenantId?year=2026	Synthèse financière complète (KPIs, score santé, marges, food cost, ventilations)
+GET/POST/PUT/DELETE /purchases/:tenantId	Gestion des achats fournisseurs
+GET/POST/PUT/DELETE /expenses/:tenantId	Gestion des frais généraux
+GET/POST/PUT/DELETE /bank/:tenantId	Mouvements bancaires
+GET/POST/PUT/DELETE /loans/:tenantId	Emprunts et crédits
+GET/POST/PUT/DELETE /cash/:tenantId	Caisse quotidienne (CA, ventilation CB/espèces/Uber/Deliveroo)
+GET/POST/PUT/DELETE /employees/:tenantId	Gestion des employés
+GET/POST/PUT /payroll/:tenantId	Fiches de paie
+Ce que la synthèse calcule automatiquement :
+
+Score Santé (/100) avec label (BON/MOYEN/CRITIQUE)
+Chiffre d'affaires, achats, frais, salaires, charges
+Marge opérationnelle (%)
+Food Cost (%)
+Overhead (%)
+Ventilation par catégorie et par mois
+Côté AppToOrder, il faut maintenant :
+
+Ajouter l'onglet "MyBusiness" dans le dashboard pro
+Appeler cette API depuis le frontend avec le tenantId du restaurant (le slug)
+Construire les composants UI similaires à Suguval (synthèse, achats, frais, banque, RH, caisse)
+L'API est la fondation — la même pour tous les restaurants clients. Chaque restaurant accède uniquement à ses propres données grâce au tenantId.
+
+each business a different DB will be attribuate, MaxIA can manage and fetch in all but never mistake or cross datas allowaed
+
+Compris — isolation totale par restaurant. Chaque business aura son propre schéma PostgreSQL séparé. Aucun croisement de données possible. MaxAI peut lire dans tous les schémas mais jamais mélanger.
+
+Je vais refactorer le service pour utiliser des schémas PostgreSQL isolés par tenant :
+
+Now update the routes to add the admin overview endpoint and ensure tenant isolation:
+
+Now let me restart and test the isolation:
+
+Isolation parfaite. Chaque restaurant a son propre schéma PostgreSQL :
+
+sugumaillane → schéma coba_biz_sugumaillane (voit uniquement Metro 520.50€)
+suguvalentine → schéma coba_biz_suguvalentine (voit uniquement Promocash 310€)
+pizzaroma → schéma coba_biz_pizzaroma (voit uniquement Farine Plus 180€)
+Zéro croisement possible — chaque table est physiquement séparée dans un schéma différent. Un restaurant ne peut jamais voir, modifier ou accéder aux données d'un autre.
+
+MaxAI COBA a une vue administrative qui lui permet de voir tous les tenants et de générer un aperçu global, mais chaque requête par restaurant est strictement isolée dans son propre schéma.
+
+Côté AppToOrder, quand un restaurateur ouvre l'onglet "MyBusiness" sur /pro/sugumaillane, l'app envoie les requêtes avec tenantId = "sugumaillane" et ne reçoit que ses données. Impossible de deviner ou d'accéder au schéma d'un autre restaurant.
