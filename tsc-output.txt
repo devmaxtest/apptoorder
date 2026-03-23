@@ -1,0 +1,242 @@
+
+> rest-express@1.0.0 check
+> tsc --pretty false
+
+client/src/components/SortableList.tsx(132,13): error TS2339: Property 'ref' does not exist on type 'Omit<DragHandleProps, "ref">'.
+client/src/components/hero-section.tsx(53,13): error TS2322: Type '"link"' is not assignable to type '"default" | "destructive" | "secondary" | "outline" | "ghost" | null | undefined'.
+client/src/components/mybusiness/AchatsTab.tsx(45,44): error TS2551: Property 'linkedEntity' does not exist on type 'SuguFile'. Did you mean 'linkedEntityId'?
+client/src/components/mybusiness/AchatsTab.tsx(282,84): error TS2367: This comparison appears to be unintentional because the types 'number | undefined' and 'string' have no overlap.
+client/src/components/mybusiness/AchatsTab.tsx(283,221): error TS2367: This comparison appears to be unintentional because the types 'number | undefined' and 'string' have no overlap.
+client/src/components/mybusiness/AchatsTab.tsx(366,21): error TS2322: Type '{ open: true; onClose: () => void; onUpload: (fileData: FormData) => void; uploading: any; defaultCategory: string; }' is not assignable to type 'IntrinsicAttributes & { open: boolean; onClose: () => void; onUpload: (formData: FormData) => void; linkedEntityType?: string | undefined; linkedEntityId?: number | undefined; isPending?: boolean | undefined; }'.
+  Property 'uploading' does not exist on type 'IntrinsicAttributes & { open: boolean; onClose: () => void; onUpload: (formData: FormData) => void; linkedEntityType?: string | undefined; linkedEntityId?: number | undefined; isPending?: boolean | undefined; }'.
+client/src/components/mybusiness/AchatsTab.tsx(372,86): error TS2367: This comparison appears to be unintentional because the types 'number | undefined' and 'string' have no overlap.
+client/src/components/mybusiness/AchatsTab.tsx(374,58): error TS2367: This comparison appears to be unintentional because the types 'number | undefined' and 'string' have no overlap.
+client/src/components/mybusiness/AchatsTab.tsx(387,21): error TS2322: Type '(id: any, email: any) => any' is not assignable to type '(file: SuguFile) => void'.
+  Target signature provides too few arguments. Expected 2 or more, but got 1.
+client/src/components/mybusiness/AchatsTab.tsx(387,31): error TS7006: Parameter 'id' implicitly has an 'any' type.
+client/src/components/mybusiness/AchatsTab.tsx(387,35): error TS7006: Parameter 'email' implicitly has an 'any' type.
+client/src/components/mybusiness/CaisseTab.tsx(296,17): error TS2322: Type '{ open: boolean; onClose: () => void; onCapture: (blob: Blob) => void; scanning: any; }' is not assignable to type 'IntrinsicAttributes & { open: boolean; onClose: () => void; onCapture: (blob: Blob) => void; }'.
+  Property 'scanning' does not exist on type 'IntrinsicAttributes & { open: boolean; onClose: () => void; onCapture: (blob: Blob) => void; }'.
+client/src/components/mybusiness/DashboardTab.tsx(270,82): error TS2339: Property 'label' does not exist on type 'SuguBackup'.
+client/src/components/mybusiness/DashboardTab.tsx(273,96): error TS2339: Property 'status' does not exist on type 'SuguBackup'.
+client/src/components/mybusiness/DashboardTab.tsx(273,158): error TS2339: Property 'status' does not exist on type 'SuguBackup'.
+client/src/components/mybusiness/DashboardTab.tsx(274,44): error TS2339: Property 'status' does not exist on type 'SuguBackup'.
+client/src/components/mybusiness/DashboardTab.tsx(274,78): error TS2339: Property 'status' does not exist on type 'SuguBackup'.
+client/src/components/mybusiness/FraisTab.tsx(37,68): error TS2551: Property 'linkedEntity' does not exist on type 'SuguFile'. Did you mean 'linkedEntityId'?
+client/src/components/mybusiness/FraisTab.tsx(213,83): error TS2367: This comparison appears to be unintentional because the types 'number | undefined' and 'string' have no overlap.
+client/src/components/mybusiness/FraisTab.tsx(214,220): error TS2367: This comparison appears to be unintentional because the types 'number | undefined' and 'string' have no overlap.
+client/src/components/mybusiness/FraisTab.tsx(293,21): error TS2322: Type '{ open: true; onClose: () => void; onUpload: (fileData: FormData) => void; uploading: any; defaultCategory: string; }' is not assignable to type 'IntrinsicAttributes & { open: boolean; onClose: () => void; onUpload: (formData: FormData) => void; linkedEntityType?: string | undefined; linkedEntityId?: number | undefined; isPending?: boolean | undefined; }'.
+  Property 'uploading' does not exist on type 'IntrinsicAttributes & { open: boolean; onClose: () => void; onUpload: (formData: FormData) => void; linkedEntityType?: string | undefined; linkedEntityId?: number | undefined; isPending?: boolean | undefined; }'.
+client/src/components/mybusiness/FraisTab.tsx(304,21): error TS2322: Type '(id: any, email: any) => any' is not assignable to type '(file: SuguFile) => void'.
+  Target signature provides too few arguments. Expected 2 or more, but got 1.
+client/src/components/mybusiness/FraisTab.tsx(304,31): error TS7006: Parameter 'id' implicitly has an 'any' type.
+client/src/components/mybusiness/FraisTab.tsx(304,35): error TS7006: Parameter 'email' implicitly has an 'any' type.
+client/src/components/mybusiness/GestionRHTab.tsx(84,64): error TS2551: Property 'linkedEntity' does not exist on type 'SuguFile'. Did you mean 'linkedEntityId'?
+client/src/components/mybusiness/GestionRHTab.tsx(281,65): error TS2367: This comparison appears to be unintentional because the types 'number | undefined' and 'string' have no overlap.
+client/src/components/mybusiness/GestionRHTab.tsx(508,57): error TS2367: This comparison appears to be unintentional because the types 'number | undefined' and 'string' have no overlap.
+client/src/components/mybusiness/GestionRHTab.tsx(523,21): error TS2322: Type '{ open: true; onClose: () => void; onUpload: (fileData: FormData) => void; uploading: any; defaultCategory: string; }' is not assignable to type 'IntrinsicAttributes & { open: boolean; onClose: () => void; onUpload: (formData: FormData) => void; linkedEntityType?: string | undefined; linkedEntityId?: number | undefined; isPending?: boolean | undefined; }'.
+  Property 'uploading' does not exist on type 'IntrinsicAttributes & { open: boolean; onClose: () => void; onUpload: (formData: FormData) => void; linkedEntityType?: string | undefined; linkedEntityId?: number | undefined; isPending?: boolean | undefined; }'.
+client/src/components/mybusiness/GestionRHTab.tsx(534,21): error TS2322: Type '(id: any, email: any) => any' is not assignable to type '(file: SuguFile) => void'.
+  Target signature provides too few arguments. Expected 2 or more, but got 1.
+client/src/components/mybusiness/GestionRHTab.tsx(534,31): error TS7006: Parameter 'id' implicitly has an 'any' type.
+client/src/components/mybusiness/GestionRHTab.tsx(534,35): error TS7006: Parameter 'email' implicitly has an 'any' type.
+client/src/lib/queryClient.ts(40,21): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string | Error'.
+client/src/pages/admin-coba-dashboard.tsx(229,36): error TS2322: Type '"destructive" | "success" | "warning"' is not assignable to type '"default" | "destructive" | "secondary" | "outline" | null | undefined'.
+  Type '"success"' is not assignable to type '"default" | "destructive" | "secondary" | "outline" | null | undefined'.
+client/src/pages/admin-portal.tsx(309,25): error TS2345: Argument of type '{ name: string; slug: string; address: string; phone: string; ownerId: string; openTime: string; closeTime: string; deliveryMinOrder: number; isOpen: true; subscriptionPlan: string; subscriptionPrice: number; ... 20 more ...; logoUrl: string; }' is not assignable to parameter of type 'SetStateAction<{ name: string; slug: string; contactName: string; contactPhone: string; address: string; phone: string; ownerId: string; openTime: string; closeTime: string; deliveryMinOrder: number; isOpen: boolean; ... 22 more ...; logoUrl: string; }>'.
+  Type '{ name: string; slug: string; address: string; phone: string; ownerId: string; openTime: string; closeTime: string; deliveryMinOrder: number; isOpen: true; subscriptionPlan: string; subscriptionPrice: number; ... 20 more ...; logoUrl: string; }' is missing the following properties from type '{ name: string; slug: string; contactName: string; contactPhone: string; address: string; phone: string; ownerId: string; openTime: string; closeTime: string; deliveryMinOrder: number; isOpen: boolean; ... 22 more ...; logoUrl: string; }': contactName, contactPhone
+client/src/pages/pro-portal.tsx(357,5): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<{ id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], Error, { id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], QueryKey>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], Error, { id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], Error, { id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], QueryKey> | undefined'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<{ id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], Error, { id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], Error, { id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], Error, { id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], QueryKey> | undefined'.
+  Overload 3 of 3, '(options: UseQueryOptions<{ id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], Error, { id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], Error, { id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], Error, { id: string; restaurantId: string; name: string; nameEn: string; sortOrder: number | null; }[], QueryKey> | undefined'.
+client/src/pages/pro-portal.tsx(362,5): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<{ id: string; restaurantId: string; name: string; sortOrder: number | null; description: string | null; price: number; imageUrl: string | null; categoryId: string; isAvailable: boolean; }[], Error, { ...; }[], QueryKey>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; description: string | null; price: number; imageUrl: string | null; categoryId: string; isAvailable: boolean; }[], Error, { ...; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; description: string | null; price: number; imageUrl: string | null; categoryId: string; isAvailable: boolean; }[], Error, { ...; }[], QueryKey> | undefined'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<{ id: string; restaurantId: string; name: string; sortOrder: number | null; description: string | null; price: number; imageUrl: string | null; categoryId: string; isAvailable: boolean; }[], Error, { ...; }[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; description: string | null; price: number; imageUrl: string | null; categoryId: string; isAvailable: boolean; }[], Error, { ...; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; description: string | null; price: number; imageUrl: string | null; categoryId: string; isAvailable: boolean; }[], Error, { ...; }[], QueryKey> | undefined'.
+  Overload 3 of 3, '(options: UseQueryOptions<{ id: string; restaurantId: string; name: string; sortOrder: number | null; description: string | null; price: number; imageUrl: string | null; categoryId: string; isAvailable: boolean; }[], Error, { ...; }[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; description: string | null; price: number; imageUrl: string | null; categoryId: string; isAvailable: boolean; }[], Error, { ...; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; description: string | null; price: number; imageUrl: string | null; categoryId: string; isAvailable: boolean; }[], Error, { ...; }[], QueryKey> | undefined'.
+client/src/pages/pro-portal.tsx(367,5): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<{ status: string; id: string; restaurantId: string; total: number; createdAt: Date | null; customerId: string | null; items: string; customerName: string; customerPhone: string; customerAddress: string | null; orderType: string; }[], Error, { ...; }[], QueryKey>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ status: string; id: string; restaurantId: string; total: number; createdAt: Date | null; customerId: string | null; items: string; customerName: string; customerPhone: string; customerAddress: string | null; orderType: string; }[], Error, { ...; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ status: string; id: string; restaurantId: string; total: number; createdAt: Date | null; customerId: string | null; items: string; customerName: string; customerPhone: string; customerAddress: string | null; orderType: string; }[], Error, { ...; }[], QueryKey> | undefined'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<{ status: string; id: string; restaurantId: string; total: number; createdAt: Date | null; customerId: string | null; items: string; customerName: string; customerPhone: string; customerAddress: string | null; orderType: string; }[], Error, { ...; }[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ status: string; id: string; restaurantId: string; total: number; createdAt: Date | null; customerId: string | null; items: string; customerName: string; customerPhone: string; customerAddress: string | null; orderType: string; }[], Error, { ...; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ status: string; id: string; restaurantId: string; total: number; createdAt: Date | null; customerId: string | null; items: string; customerName: string; customerPhone: string; customerAddress: string | null; orderType: string; }[], Error, { ...; }[], QueryKey> | undefined'.
+  Overload 3 of 3, '(options: UseQueryOptions<{ status: string; id: string; restaurantId: string; total: number; createdAt: Date | null; customerId: string | null; items: string; customerName: string; customerPhone: string; customerAddress: string | null; orderType: string; }[], Error, { ...; }[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ status: string; id: string; restaurantId: string; total: number; createdAt: Date | null; customerId: string | null; items: string; customerName: string; customerPhone: string; customerAddress: string | null; orderType: string; }[], Error, { ...; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ status: string; id: string; restaurantId: string; total: number; createdAt: Date | null; customerId: string | null; items: string; customerName: string; customerPhone: string; customerAddress: string | null; orderType: string; }[], Error, { ...; }[], QueryKey> | undefined'.
+client/src/pages/pro-portal.tsx(377,5): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<{ totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, Error, { totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, QueryKey>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, Error, { totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, Error, { totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, QueryKey> | undefined'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<{ totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, Error, { totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, Error, { totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, Error, { totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, QueryKey> | undefined'.
+  Overload 3 of 3, '(options: UseQueryOptions<{ totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, Error, { totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, Error, { totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, Error, { totalOrders: number; totalRevenue: number; pendingOrders: number; todayOrders: number; }, QueryKey> | undefined'.
+client/src/pages/pro-portal.tsx(382,5): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<{ id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], Error, { id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], QueryKey>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], Error, { id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], Error, { id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], QueryKey> | undefined'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<{ id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], Error, { id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], Error, { id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], Error, { id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], QueryKey> | undefined'.
+  Overload 3 of 3, '(options: UseQueryOptions<{ id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], Error, { id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], Error, { id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], Error, { id: string; restaurantId: string; caption: string | null; createdAt: Date | null; sortOrder: number | null; imageUrl: string; }[], QueryKey> | undefined'.
+client/src/pages/pro-portal.tsx(399,5): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<CustomerData[], Error, CustomerData[], QueryKey>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<CustomerData[], Error, CustomerData[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<CustomerData[], Error, CustomerData[], QueryKey> | undefined'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<CustomerData[], Error, CustomerData[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<CustomerData[], Error, CustomerData[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<CustomerData[], Error, CustomerData[], QueryKey> | undefined'.
+  Overload 3 of 3, '(options: UseQueryOptions<CustomerData[], Error, CustomerData[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<CustomerData[], Error, CustomerData[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<CustomerData[], Error, CustomerData[], QueryKey> | undefined'.
+client/src/pages/pro-portal.tsx(402,81): error TS2322: Type 'boolean | null | undefined' is not assignable to type 'boolean | undefined'.
+  Type 'null' is not assignable to type 'boolean | undefined'.
+client/src/pages/pro-portal.tsx(556,5): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<{ id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], Error, { id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], QueryKey>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], Error, { id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], Error, { id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], QueryKey> | undefined'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<{ id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], Error, { id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], Error, { id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], Error, { id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], QueryKey> | undefined'.
+  Overload 3 of 3, '(options: UseQueryOptions<{ id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], Error, { id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], QueryKey>, queryClient?: QueryClient | undefined): UseQueryResult<...>', gave the following error.
+    Type 'boolean | null | undefined' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], Error, { id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], QueryKey> | undefined'.
+      Type 'null' is not assignable to type 'Enabled<{ id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], Error, { id: string; restaurantId: string; name: string; sortOrder: number | null; startTime: string; endTime: string; }[], QueryKey> | undefined'.
+client/src/pages/pro-portal.tsx(1061,32): error TS2339: Property 'pendingOrders' does not exist on type 'NonNullable<TQueryFnData>'.
+client/src/pages/pro-portal.tsx(1061,56): error TS2339: Property 'filter' does not exist on type 'TQueryFnData | never[]'.
+  Property 'filter' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1061,63): error TS7006: Parameter 'o' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1062,34): error TS2339: Property 'filter' does not exist on type 'TQueryFnData | never[]'.
+  Property 'filter' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1062,41): error TS7006: Parameter 'o' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1063,30): error TS2339: Property 'filter' does not exist on type 'TQueryFnData | never[]'.
+  Property 'filter' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1063,37): error TS7006: Parameter 'o' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1064,30): error TS2339: Property 'todayOrders' does not exist on type 'NonNullable<TQueryFnData>'.
+client/src/pages/pro-portal.tsx(1064,52): error TS2339: Property 'filter' does not exist on type 'TQueryFnData | never[]'.
+  Property 'filter' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1064,59): error TS7006: Parameter 'o' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1065,31): error TS2339: Property 'totalRevenue' does not exist on type 'NonNullable<TQueryFnData>'.
+client/src/pages/pro-portal.tsx(1065,54): error TS2339: Property 'reduce' does not exist on type 'TQueryFnData | never[]'.
+  Property 'reduce' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1065,62): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1065,67): error TS7006: Parameter 'o' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1066,31): error TS2339: Property 'filter' does not exist on type 'TQueryFnData | never[]'.
+  Property 'filter' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1066,38): error TS7006: Parameter 'o' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1066,134): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1066,139): error TS7006: Parameter 'o' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1067,30): error TS2339: Property 'totalOrders' does not exist on type 'NonNullable<TQueryFnData>'.
+client/src/pages/pro-portal.tsx(1067,52): error TS2339: Property 'length' does not exist on type 'TQueryFnData | never[]'.
+  Property 'length' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1070,33): error TS2339: Property 'filter' does not exist on type 'TQueryFnData | never[]'.
+  Property 'filter' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1070,40): error TS7006: Parameter 'o' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1073,12): error TS7006: Parameter 'a' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1073,15): error TS7006: Parameter 'b' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1078,30): error TS2339: Property 'filter' does not exist on type 'TQueryFnData | never[]'.
+  Property 'filter' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1078,37): error TS7006: Parameter 'o' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1081,34): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1081,39): error TS7006: Parameter 'o' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1366,48): error TS7006: Parameter 'order' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1476,70): error TS2339: Property 'length' does not exist on type 'TQueryFnData | never[]'.
+  Property 'length' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1476,101): error TS2339: Property 'length' does not exist on type 'TQueryFnData | never[]'.
+  Property 'length' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1498,15): error TS2322: Type 'TQueryFnData | never[]' is not assignable to type 'never[]'.
+  Type 'TQueryFnData' is not assignable to type 'never[]'.
+client/src/pages/pro-portal.tsx(1499,42): error TS2339: Property 'id' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1501,71): error TS2339: Property 'id' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1504,70): error TS2339: Property 'id' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1505,47): error TS2339: Property 'filter' does not exist on type 'TQueryFnData | never[]'.
+  Property 'filter' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1505,54): error TS7006: Parameter 'd' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1505,85): error TS2339: Property 'id' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1509,43): error TS2339: Property 'id' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1509,69): error TS2339: Property 'id' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1510,44): error TS2339: Property 'id' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1519,62): error TS2339: Property 'id' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1524,66): error TS2339: Property 'name' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1525,52): error TS2339: Property 'nameEn' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1539,71): error TS2339: Property 'id' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1546,103): error TS2339: Property 'id' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1547,73): error TS2339: Property 'id' does not exist on type 'never'.
+client/src/pages/pro-portal.tsx(1557,47): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1559,73): error TS18046: 'd' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1564,53): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1568,30): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1570,38): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1571,38): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1580,68): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1581,86): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1585,55): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1587,40): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1588,93): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1589,69): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1594,75): error TS2345: Argument of type 'unknown' is not assignable to parameter of type '{ id: string; restaurantId: string; name: string; sortOrder: number | null; description: string | null; price: number; imageUrl: string | null; categoryId: string; isAvailable: boolean; }'.
+client/src/pages/pro-portal.tsx(1596,69): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1604,63): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'SetStateAction<{ id: string; restaurantId: string; name: string; sortOrder: number | null; description: string | null; price: number; imageUrl: string | null; categoryId: string; isAvailable: boolean; } | null>'.
+client/src/pages/pro-portal.tsx(1604,86): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1605,64): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1612,72): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1613,66): error TS18046: 'dish' is of type 'unknown'.
+client/src/pages/pro-portal.tsx(1630,25): error TS2339: Property 'length' does not exist on type 'TQueryFnData | never[]'.
+  Property 'length' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1643,73): error TS2339: Property 'length' does not exist on type 'TQueryFnData | never[]'.
+  Property 'length' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1666,27): error TS2339: Property 'length' does not exist on type 'TQueryFnData | never[]'.
+  Property 'length' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1681,34): error TS2339: Property 'map' does not exist on type 'TQueryFnData | never[]'.
+  Property 'map' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1681,39): error TS7006: Parameter 'customer' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(1801,31): error TS2339: Property 'length' does not exist on type 'TQueryFnData | never[]'.
+  Property 'length' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(1803,30): error TS2461: Type 'TQueryFnData | never[]' is not an array type.
+client/src/pages/pro-portal.tsx(2264,27): error TS2339: Property 'length' does not exist on type 'TQueryFnData | never[]'.
+  Property 'length' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(2266,26): error TS2461: Type 'TQueryFnData | never[]' is not an array type.
+client/src/pages/pro-portal.tsx(2453,32): error TS2339: Property 'length' does not exist on type 'TQueryFnData | never[]'.
+  Property 'length' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(2461,36): error TS2339: Property 'map' does not exist on type 'TQueryFnData | never[]'.
+  Property 'map' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(2461,41): error TS7006: Parameter 'photo' implicitly has an 'any' type.
+client/src/pages/pro-portal.tsx(2722,35): error TS2339: Property 'map' does not exist on type 'TQueryFnData | never[]'.
+  Property 'map' does not exist on type 'TQueryFnData'.
+client/src/pages/pro-portal.tsx(2722,39): error TS7006: Parameter 'cat' implicitly has an 'any' type.
+server/index.ts(85,40): error TS2339: Property 'getRestaurantByCustomDomain' does not exist on type 'DatabaseStorage'.
+server/routes.ts(783,7): error TS2552: Cannot find name 'orderNotifications'. Did you mean 'Notification'?
+server/routes.ts(1279,46): error TS2339: Property 'password' does not exist on type '{ id: string; firstName: string | null; lastName: string | null; email: string | null; phone: string | null; address: string | null; totalOrders: number; totalSpent: number; lastOrderDate: Date | null; }'.
+server/routes.ts(1422,7): error TS2552: Cannot find name 'orderNotifications'. Did you mean 'Notification'?
+server/routes.ts(2178,62): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(value: string | number | Date): Date', gave the following error.
+    Argument of type 'Date | null' is not assignable to parameter of type 'string | number | Date'.
+      Type 'null' is not assignable to type 'string | number | Date'.
+  Overload 2 of 4, '(value: string | number): Date', gave the following error.
+    Argument of type 'Date | null' is not assignable to parameter of type 'string | number'.
+      Type 'null' is not assignable to type 'string | number'.
+server/routes.ts(2381,32): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(value: string | number | Date): Date', gave the following error.
+    Argument of type 'Date | null' is not assignable to parameter of type 'string | number | Date'.
+      Type 'null' is not assignable to type 'string | number | Date'.
+  Overload 2 of 4, '(value: string | number): Date', gave the following error.
+    Argument of type 'Date | null' is not assignable to parameter of type 'string | number'.
+      Type 'null' is not assignable to type 'string | number'.
+server/websocket.ts(3,15): error TS2305: Module '"express-session"' has no exported member 'SessionStore'.
+server/websocket.ts(106,44): error TS7006: Parameter 'err' implicitly has an 'any' type.
+server/websocket.ts(106,49): error TS7006: Parameter 'session' implicitly has an 'any' type.
