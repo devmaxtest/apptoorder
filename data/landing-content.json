@@ -1,0 +1,235 @@
+{
+  "hero": {
+    "badge": "0% commission sur vos commandes",
+    "title1": "Votre restaurant.",
+    "titleHighlight": "Vos commandes.",
+    "title2": "Vos revenus.",
+    "subtitle": "Commande en ligne, gestion financière, comptabilité, RH, caisse connectée et assistant IA — tout dans une seule plateforme. Sans commission. Sans engagement.",
+    "ctaPrimary": "Démarrer gratuitement",
+    "ctaSecondary": "Voir la démo",
+    "check1": "0% commission",
+    "check2": "Sans engagement",
+    "check3": "En ligne en 48h"
+  },
+  "problem": {
+    "title": "0% de commissions",
+    "subtitle": "Les plateformes de livraison prennent jusqu'à 30% de commission. Avec macommande.shop, vous gardez 100% de vos revenus.",
+    "marketplaceTitle": "Avec les marketplaces",
+    "marketplaceItems": [
+      "25-30% de commission par commande",
+      "Aucune donnée client (emails, préférences)",
+      "Pas de branding — votre restaurant noyé parmi 200 autres",
+      "Dépendance totale à l'algorithme"
+    ],
+    "marketplaceResult": "Sur 1 000 EUR de ventes = 300 EUR perdus",
+    "usTitle": "Avec macommande.shop",
+    "usItems": [
+      "0% commission — abonnement fixe prévisible",
+      "Vos clients, vos données, votre fidélisation",
+      "Votre marque, vos couleurs, votre domaine",
+      "+ Comptabilité, RH et gestion financière incluses"
+    ],
+    "usResult": "Sur 1 000 EUR de ventes = 1 000 EUR pour vous"
+  },
+  "features": {
+    "badge": "Tout-en-un",
+    "title": "Bien plus qu'une simple commande en ligne",
+    "subtitle": "La seule plateforme qui réunit commande, gestion financière, comptabilité, RH et intelligence artificielle pour les restaurants indépendants.",
+    "clientPortal": {
+      "label": "Portail Client",
+      "title": "Menu digital et commande en ligne",
+      "description": "Vos clients commandent directement depuis votre propre site, à vos couleurs. Menu interactif, panier en temps réel, suivi de commande — tout est fluide et sans friction.",
+      "checks": [
+        "Menu interactif avec catégories et options",
+        "Livraison et à emporter",
+        "Suivi de commande en temps réel",
+        "Programme de fidélité intégré",
+        "Responsive mobile — pas besoin d'app"
+      ]
+    },
+    "proDashboard": {
+      "label": "Espace Pro",
+      "title": "Gérez votre restaurant en temps réel",
+      "description": "Tableau de bord complet avec statistiques en direct, gestion du menu en drag-and-drop, suivi des commandes en temps réel, et personnalisation totale de votre vitrine.",
+      "checks": [
+        "Statistiques en temps réel (CA, commandes, clients)",
+        "Gestion menu drag-and-drop avec options",
+        "Notifications instantanées (WebSocket)",
+        "Branding personnalisé (couleurs, logo, hero)",
+        "Factures PDF automatiques"
+      ]
+    },
+    "myBusiness": {
+      "label": "MyBusiness",
+      "title": "Comptabilité et RH — sans logiciel supplémentaire",
+      "description": "Ce qu'aucun concurrent ne fait : une suite complète de gestion financière et RH intégrée directement dans votre espace restaurant. Fini les 3 logiciels différents.",
+      "modules": [
+        "Achats fournisseurs",
+        "Frais généraux",
+        "Rapprochement bancaire",
+        "Scan tickets (OCR)",
+        "Gestion RH & Paie",
+        "Import PDF paie"
+      ]
+    },
+    "pos": {
+      "label": "Caisse Connectée",
+      "title": "Connecté à votre caisse existante",
+      "description": "Grâce à HubRise, les commandes en ligne arrivent directement dans votre caisse. Compatible avec 40+ systèmes POS : LEO2, Zelty, Lightspeed, Tiller, iKentoo et bien d'autres.",
+      "checks": [
+        "Synchronisation automatique des commandes",
+        "Compatible 40+ systèmes POS",
+        "Connexion en 1 clic via OAuth",
+        "Catalogue synchronisé"
+      ]
+    },
+    "maxai": {
+      "label": "MaxAI par COBA",
+      "title": "Votre assistant intelligent, intégré à votre restaurant",
+      "description": "MaxAI analyse vos données financières, détecte les anomalies, et répond à vos questions en temps réel. Un expert financier disponible 24h/24, directement dans votre tableau de bord.",
+      "modules": [
+        "Chat intelligent",
+        "Analyse financière",
+        "Alertes anomalies",
+        "Monitoring 24/7",
+        "Recommandations IA",
+        "Suivi performance"
+      ],
+      "checks": [
+        "Posez vos questions en langage naturel",
+        "Analyse automatique de vos achats, frais et CA",
+        "Détection d'anomalies et alertes proactives",
+        "Widget déplaçable — ne gêne jamais votre travail"
+      ]
+    }
+  },
+  "stats": [
+    {
+      "value": "0%",
+      "label": "Commission"
+    },
+    {
+      "value": "5 min",
+      "label": "Mise en ligne"
+    },
+    {
+      "value": "40+",
+      "label": "Caisses compatibles"
+    },
+    {
+      "value": "MaxAI",
+      "label": "Assistant IA intégré"
+    },
+    {
+      "value": "99 EUR",
+      "label": "À partir de / mois"
+    }
+  ],
+  "pricing": {
+    "title": "Tarifs simples, sans surprise",
+    "subtitle": "Pas de commission, pas de frais cachés. Un abonnement mensuel fixe adapté à vos besoins.",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "99ht",
+        "desc": "Idéal pour démarrer avec la commande en ligne",
+        "features": [
+          "Site de commande personnalisé",
+          "Gestion du menu en temps réel",
+          "Suivi des commandes",
+          "Statistiques de base",
+          "Support par email"
+        ],
+        "cta": "Commencer",
+        "popular": false
+      },
+      {
+        "name": "Website + App",
+        "price": "199ht",
+        "desc": "Pour les restaurants qui veulent tout gérer",
+        "features": [
+          "Tout le plan Starter",
+          "MyBusiness (comptabilité, RH, banque)",
+          "MaxAI — assistant IA par COBA",
+          "Intégration HubRise (caisse)",
+          "Domaine personnalisé",
+          "Scan tickets & import PDF",
+          "Support prioritaire"
+        ],
+        "cta": "Choisir ce plan",
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": "Sur devis",
+        "desc": "Solution sur mesure pour groupes et chaînes",
+        "features": [
+          "Tout le plan Website + App",
+          "Multi-sites centralisé",
+          "API personnalisée",
+          "Formation équipe",
+          "Account manager dédié",
+          "SLA garanti"
+        ],
+        "cta": "Nous contacter",
+        "popular": false
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "id": "commission",
+        "q": "Est-ce que c'est vraiment sans commission ?",
+        "a": "Oui, 0% de commission sur toutes vos commandes. Vous payez uniquement un abonnement mensuel fixe. Tout ce que vos clients paient vous revient intégralement."
+      },
+      {
+        "id": "mise-en-ligne",
+        "q": "Combien de temps pour mettre en ligne mon restaurant ?",
+        "a": "5 minutes. Vous créez votre compte, ajoutez vos catégories et plats, personnalisez vos couleurs — et votre site de commande est en ligne. Aucune compétence technique requise."
+      },
+      {
+        "id": "caisse",
+        "q": "Est-ce compatible avec ma caisse ?",
+        "a": "Très probablement. Grâce à notre intégration HubRise, nous sommes compatibles avec plus de 40 systèmes de caisse : LEO2, Zelty, Lightspeed, Tiller, iKentoo, et bien d'autres. Les commandes arrivent automatiquement dans votre caisse."
+      },
+      {
+        "id": "mybusiness",
+        "q": "Qu'est-ce que MyBusiness ?",
+        "a": "MyBusiness est notre suite de gestion financière intégrée. Elle inclut la gestion des achats fournisseurs, des frais généraux, le rapprochement bancaire automatique, la gestion des employés et de la paie, le scan de tickets par caméra, et l'import de bulletins de salaire PDF. C'est comme avoir un expert-comptable et un DRH intégrés dans votre espace restaurant."
+      },
+      {
+        "id": "maxai",
+        "q": "Qu'est-ce que MaxAI ?",
+        "a": "MaxAI est votre assistant intelligent propulsé par COBA. Il analyse vos données financières (achats, frais, CA, trésorerie) et répond à vos questions en langage naturel. Il détecte les anomalies, vous alerte sur les écarts budgétaires, et vous recommande des actions concrètes. Il est accessible via un widget flottant dans votre espace Pro et MyBusiness."
+      },
+      {
+        "id": "domaine",
+        "q": "Puis-je garder mon nom de domaine ?",
+        "a": "Oui, avec le plan Website + App, vous pouvez utiliser votre propre nom de domaine (ex: commander.monrestaurant.fr). Nous gérons la configuration technique pour vous."
+      },
+      {
+        "id": "engagement",
+        "q": "Y a-t-il un engagement ?",
+        "a": "Non, aucun engagement. Vous pouvez arrêter votre abonnement à tout moment. Nous croyons que la qualité du service est le meilleur argument de rétention."
+      },
+      {
+        "id": "securite",
+        "q": "Mes données sont-elles sécurisées ?",
+        "a": "Absolument. Nous utilisons le chiffrement SSL, les mots de passe sont hashés avec bcrypt, toutes les entrées sont validées et sanitisées, et notre infrastructure est surveillée 24/7 par 19 checks automatiques. Vos données financières MyBusiness sont isolées par restaurant."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Prêt à reprendre le contrôle de vos commandes ?",
+    "subtitle": "Rejoignez les restaurateurs qui ont choisi l'indépendance. 0% commission, mise en ligne en 5 minutes.",
+    "buttonPrimary": "Démarrer gratuitement",
+    "buttonSecondary": "Se connecter"
+  },
+  "footer": {
+    "description": "La plateforme tout-en-un pour les restaurants indépendants. Commande en ligne, gestion financière et RH — sans commission.",
+    "contactEmail": "contact@macommande.shop",
+    "copyright": "macommande.shop — Tous droits réservés"
+  }
+}
