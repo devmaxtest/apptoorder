@@ -1,0 +1,58 @@
+modules = ["nodejs-20", "web", "postgresql-16"]
+run = "npm run dev"
+hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
+
+[nix]
+channel = "stable-24_05"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[env]
+PORT = "5000"
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["node", "./dist/index.cjs"]
+build = ["npm", "run", "build"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+waitForPort = 5000
+
+[agent]
+integrations = ["javascript_database:1.0.0", "javascript_log_in_with_replit:2.0.0", "javascript_object_storage:2.0.0"]
+
+[userenv]
+
+[userenv.shared]
+MASTER_ADMIN_EMAIL = "mauriced@apptoo.com"
+MASTER_ADMIN_PASSWORD_HASH = "$2b$10$w7iQt3lAZdAT8rCKMlQOA.0HRmyjSA.3T7LKrWbE8eB8MsDguo2PO"
+HEALTH_API_KEY = "fa9b26038eed68a9ee9011c5f6947cd942bf94dabf611c647311753e26b287cb"
+APPTOORDER_API_KEY = "fa9b26038eed68a9ee9011c5f6947cd942bf94dabf611c647311753e26b287cb"
+VITE_COBA_API_URL = "https://ulyssepro.org"
+VITE_COBA_API_KEY = "coba-apptoorder-2025"
+COBA_API_URL = "https://ulyssepro.org"
+COBA_API_KEY = "coba-apptoorder-2025"
+DISCORD_2FA_WEBHOOK_URL = "https://discord.com/api/webhooks/1485085692303507586/_rrjGxUJ70aV17KGMNcrOwFOeRwmaF8ekAmSTjcPIcQ6OfwWOkOXSRpc8SZ0lFVTNWgI"
+VAPID_PUBLIC_KEY = "BM6klQC5e0T7Dfe3PPux3-maLyYZZlIsW53d8gs_wns5aqgoWiGjbzsKOJQ8fU8Vszsv95mM0j8XdjENtpL3QME"
+VAPID_PRIVATE_KEY = "DSbxiE1WEPAqlEoBqcKfcNB_zjddDGZgNUkGYKIqUx4"
+VITE_VAPID_PUBLIC_KEY = "BM6klQC5e0T7Dfe3PPux3-maLyYZZlIsW53d8gs_wns5aqgoWiGjbzsKOJQ8fU8Vszsv95mM0j8XdjENtpL3QME"

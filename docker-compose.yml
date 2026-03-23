@@ -1,0 +1,40 @@
+services:
+  app:
+    build: .
+    container_name: macommande-app
+    restart: always
+    env_file: .env.production
+    ports:
+      - "127.0.0.1:6000:5000"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - macommande-net
+
+  db:
+    image: postgres:16-alpine
+    container_name: macommande-db
+    restart: always
+    environment:
+      POSTGRES_DB: macommande
+      POSTGRES_USER: macommande
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme_in_production}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U macommande"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - macommande-net
+
+volumes:
+  pgdata:
+
+networks:
+  macommande-net:
+    driver: bridge

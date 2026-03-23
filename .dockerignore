@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+.local
+.cache
+*.tar.gz
+.DS_Store
+attached_assets
+.replit
+replit.nix
